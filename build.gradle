@@ -1,0 +1,48 @@
+buildscript {
+    ext {
+        springBootVersion = '3.4.0'
+        springDependencyManagementVersion = '1.1.6'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version "$springBootVersion"
+    id 'io.spring.dependency-management' version "$springDependencyManagementVersion"
+}
+
+def compatibilityVersion = 21
+targetCompatibility = compatibilityVersion
+sourceCompatibility = compatibilityVersion
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    postgresqlJdbcVersion = '42.7.4'
+    flywayVersion = '11.1.0'
+}
+
+// Feel free to add new dependencies in the section below
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    implementation "org.postgresql:postgresql:$postgresqlJdbcVersion"
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    testImplementation "org.flywaydb:flyway-core:$flywayVersion"
+    testImplementation "org.flywaydb:flyway-database-postgresql:$flywayVersion"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}

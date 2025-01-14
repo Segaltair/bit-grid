@@ -1,0 +1,16 @@
+INSERT INTO grid(id, name, cell_size) VALUES
+  (55500055510, 'A', 5),
+  (55500055520, 'B', 10);
+
+INSERT INTO grid_column(id, number, grid_id) VALUES
+  (55500055551, 1, 55500055510),
+  (55500055552, 2, 55500055510),
+  (555000555101, 1, 55500055520);
+
+INSERT INTO grid_row(id, number, grid_id) VALUES
+  (55500055551, 1, 55500055510),
+  (555000555101, 1, 55500055520),
+  (555000555102, 2, 55500055520);
+
+INSERT INTO grid_cell(grid_column_id, grid_row_id, value) VALUES
+  (55500055552, 55500055551, '11010');

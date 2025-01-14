@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5433/grid_test_db
+    username: postgres
+    password: postgres
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
