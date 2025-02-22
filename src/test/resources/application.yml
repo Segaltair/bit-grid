@@ -10,3 +10,9 @@ spring:
   flyway:
     enabled: true
     locations: classpath:db/migration
+
+#logging:
+#  level:
+#    root: INFO
+#    org.hibernate.orm.jdbc.bind: trace
+#    org.springframework.jdbc.core.JdbcTemplate: trace

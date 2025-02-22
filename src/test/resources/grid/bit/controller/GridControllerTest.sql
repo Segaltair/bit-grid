@@ -1,5 +1,5 @@
 INSERT INTO grid(id, name, cell_size) VALUES
-  (55500055510, 'A', 5),
+  (55500055510, 'A', 100000), -- todo return 5
   (55500055520, 'B', 10);
 
 INSERT INTO grid_column(id, number, grid_id) VALUES

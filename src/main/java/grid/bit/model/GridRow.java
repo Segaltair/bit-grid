@@ -8,10 +8,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "grid_row")
 public class GridRow extends AbstractEntity<Long> {
-    private int number;
+    private Integer number;
     private Grid grid;
 
-    public int getNumber() {
+    public Integer getNumber() {
         return number;
     }
 
